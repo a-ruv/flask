@@ -1,0 +1,14 @@
+.container{
+    position: fixed;
+    left: 800px;
+}
+.times{
+    margin:20px;
+}
+.times h1{
+    margin: 10px;
+}
+
+.add_two{
+margin-right: 40px;
+}

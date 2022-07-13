@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number_game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Great Number Game!</h1>
+        <p>I am thinkig of a number between 1 and 100</p>
+        <p>Take a guess!</p>
+        <form action="/guess" method="post">
+            {#
+            {% if 'guess' in session %}
+            {% if session['guess'] > session['answer'] %}
+            <div id="too_high">Too High</div>
+            {% elif session['guess'] < session["answer"] %}
+            <div id="too_low">Too Low</div>
+            {% else %}
+            <div id="correct">Answer</div>
+            {% endif %}
+            {% endif %}
+            #}
+
+            <input type="text" name = "guess" id ="guess">
+            <button>Submit</button>
+        </form>
+        <div class ="{{ session['msg_style']}}">{{ session["msg"] }}</div>
+    </div>
+</body>
+</html>
